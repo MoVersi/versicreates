@@ -245,4 +245,193 @@
 
 <script src="scriptJS.js"></script>
 </body>
+<!-- ============ CHATBOT ============ -->
+<style>
+#vc-widget{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Space Grotesk',sans-serif}
+#vc-btn{width:56px;height:56px;border-radius:50%;background:#0f0f0f;border:1.5px solid rgba(255,255,255,0.18);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.4);transition:transform .2s ease}
+#vc-btn:hover{transform:scale(1.08)}
+#vc-window{position:absolute;bottom:68px;right:0;width:320px;display:flex;flex-direction:column;background:#0f0f0f;border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);visibility:hidden;pointer-events:none;opacity:0;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+#vc-window.open{visibility:visible;pointer-events:all;opacity:1;transform:translateY(0)}
+#vc-head{padding:14px 16px;background:#161616;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px}
+.vc-av{width:36px;height:36px;border-radius:50%;background:#1e1e1e;border:1.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.vc-hi .vc-name{margin:0;font-size:13.5px;font-weight:600;color:#f0f0f0}
+.vc-hi .vc-on{margin:0;font-size:11px;color:#6bda8f;display:flex;align-items:center;gap:4px}
+.vc-hi .vc-on::before{content:'';width:6px;height:6px;border-radius:50%;background:#6bda8f;display:inline-block}
+#vc-x{margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.35);cursor:pointer;font-size:20px;line-height:1;padding:0}
+#vc-x:hover{color:#fff}
+#vc-msgs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;max-height:320px}
+#vc-msgs::-webkit-scrollbar{width:3px}
+#vc-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
+.vm{max-width:88%}
+.vm-bot .vb{background:#1e1e1e;color:#e5e5e5;border-radius:4px 12px 12px 12px}
+.vm-user{align-self:flex-end}
+.vm-user .vb{background:#efefef;color:#0f0f0f;border-radius:12px 4px 12px 12px}
+.vb{padding:9px 13px;font-size:13px;line-height:1.55;animation:vfade .2s ease}
+@keyframes vfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+.vr-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.vr{background:none;border:1px solid rgba(255,255,255,0.18);color:#ddd;border-radius:999px;padding:5px 11px;font-size:11.5px;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:background .15s}
+.vr:hover{background:rgba(255,255,255,0.08)}
+.vr:disabled{opacity:0.35;cursor:default}
+.vr-wa{background:#1f6b4a;border-color:#1f6b4a;color:#fff}
+.vr-wa:hover{background:#27855d}
+#vc-inp-row{padding:10px 12px;border-top:1px solid rgba(255,255,255,0.07);display:none;gap:8px;align-items:center}
+#vc-inp-row.show{display:flex}
+#vc-inp{flex:1;background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:#f0f0f0;font-family:'Space Grotesk',sans-serif;font-size:13px;padding:8px 13px;outline:none}
+#vc-inp::placeholder{color:rgba(255,255,255,0.25)}
+#vc-snd{background:#efefef;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+</style>
+
+<div id="vc-widget">
+  <div id="vc-window" role="dialog" aria-label="Versi AI chat">
+    <div id="vc-head">
+      <div class="vc-av">⚡</div>
+      <div class="vc-hi">
+        <p class="vc-name">Versi Assistant</p>
+        <p class="vc-on">Online now</p>
+      </div>
+      <button id="vc-x" aria-label="Close">×</button>
+    </div>
+    <div id="vc-msgs"></div>
+    <div id="vc-inp-row">
+      <input type="text" id="vc-inp" placeholder="Type here..." autocomplete="off">
+      <button id="vc-snd" aria-label="Send">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f0f0f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button id="vc-btn" aria-label="Chat with us">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+</div>
+
+<script>
+(function(){
+  var win=document.getElementById('vc-window'),btn=document.getElementById('vc-btn'),
+      xBtn=document.getElementById('vc-x'),msgs=document.getElementById('vc-msgs'),
+      inpRow=document.getElementById('vc-inp-row'),inp=document.getElementById('vc-inp'),
+      snd=document.getElementById('vc-snd');
+  var S={name:'',email:''},opened=false;
+
+  btn.addEventListener('click',function(){
+    if(!opened){opened=true;openChat();}
+    else win.classList.toggle('open');
+  });
+  xBtn.addEventListener('click',function(){win.classList.remove('open');});
+
+  function openChat(){
+    win.classList.add('open');
+    setTimeout(function(){
+      botMsg("Hi there! 👋 I'm Versi, your AI assistant. What can I help you with today?",menu());
+    },350);
+  }
+
+  function menu(){
+    return[
+      {t:"🌐 Our services",fn:showServices},
+      {t:"🚀 Start a project",fn:startProject},
+      {t:"💰 Pricing",fn:showPricing},
+      {t:"💬 Talk to the team",fn:talkHuman}
+    ];
+  }
+
+  function botMsg(text,replies){
+    var w=document.createElement('div');w.className='vm vm-bot';
+    var b=document.createElement('div');b.className='vb';b.textContent=text;
+    w.appendChild(b);
+    if(replies&&replies.length){
+      var rw=document.createElement('div');rw.className='vr-wrap';
+      replies.forEach(function(r){
+        var rb=document.createElement('button');rb.className='vr'+(r.cls?' '+r.cls:'');
+        rb.textContent=r.t;
+        rb.addEventListener('click',function(){disableReplies();userMsg(r.t);setTimeout(r.fn,350);});
+        rw.appendChild(rb);
+      });
+      w.appendChild(rw);
+    }
+    msgs.appendChild(w);msgs.scrollTop=msgs.scrollHeight;
+  }
+
+  function userMsg(t){
+    var w=document.createElement('div');w.className='vm vm-user';
+    var b=document.createElement('div');b.className='vb';b.textContent=t;
+    w.appendChild(b);msgs.appendChild(w);msgs.scrollTop=msgs.scrollHeight;
+  }
+
+  function disableReplies(){
+    msgs.querySelectorAll('.vr').forEach(function(b){b.disabled=true;});
+  }
+
+  function showInput(ph,cb){
+    inpRow.classList.add('show');inp.placeholder=ph;inp.value='';inp.focus();
+    function go(){
+      var v=inp.value.trim();if(!v)return;
+      inpRow.classList.remove('show');
+      snd.removeEventListener('click',go);inp.removeEventListener('keydown',kh);
+      userMsg(v);setTimeout(function(){cb(v);},350);
+    }
+    function kh(e){if(e.key==='Enter')go();}
+    snd.addEventListener('click',go);inp.addEventListener('keydown',kh);
+  }
+
+  function showServices(){
+    botMsg("Here's what we offer:",[ 
+      {t:"🌐 Website Design",fn:function(){svcInfo('Custom-built websites that represent your brand properly — conversion-focused, not a template.');}},
+      {t:"🛡 Cybersecurity",fn:function(){svcInfo('Network, device & data protection — from setup and audits to ongoing monitoring.');}},
+      {t:"☁️ Cloud Hosting",fn:function(){svcInfo('Reliable cloud infrastructure with automated backups so your business stays online.');}},
+      {t:"📱 App Development",fn:function(){svcInfo('Custom mobile & web apps built around how your business actually operates.');}},
+      {t:"💡 IT Consulting",fn:function(){svcInfo('Hands-on guidance and support so your technology keeps working as you grow.');}}
+    ]);
+  }
+
+  function svcInfo(desc){
+    botMsg(desc,[
+      {t:"Start a project →",fn:startProject},
+      {t:"← Back",fn:showServices}
+    ]);
+  }
+
+  function showPricing(){
+    botMsg("Our pricing is tailored to each project — no fixed templates, no hidden fees. We scope and quote based on your specific needs.",[
+      {t:"Get a free quote",fn:startProject},
+      {t:"← Main menu",fn:function(){botMsg("What else can I help you with?",menu());}}
+    ]);
+  }
+
+  function talkHuman(){
+    botMsg("Reach us directly — we respond fast.",[
+      {t:"💬 WhatsApp",fn:function(){window.open('https://wa.me/255685144667?text=Hi%20Versi%20AI!%20I%20found%20you%20via%20your%20website.','_blank');},cls:'vr-wa'},
+      {t:"📧 Email",fn:function(){window.open('mailto:mohammedmohsinversi8@gmail.com','_blank');}},
+      {t:"← Main menu",fn:function(){botMsg("What else can I help you with?",menu());}}
+    ]);
+  }
+
+  function startProject(){
+    botMsg("Let's get you started. What's your name?");
+    showInput("Your name...",function(name){
+      S.name=name;
+      botMsg("Nice to meet you, "+name+"! What's your email?");
+      showInput("your@email.com",function(email){
+        S.email=email;
+        botMsg("Which service interests you most?",[
+          {t:"Website Design",fn:function(){finish('Website Design');}},
+          {t:"Cybersecurity",fn:function(){finish('Cybersecurity');}},
+          {t:"Cloud Hosting",fn:function(){finish('Cloud Hosting');}},
+          {t:"App Development",fn:function(){finish('App Development');}},
+          {t:"IT Consulting",fn:function(){finish('IT Consulting');}},
+          {t:"Not sure yet",fn:function(){finish('Not sure yet');}}
+        ]);
+      });
+    });
+  }
+
+  function finish(service){
+    var msg=encodeURIComponent("Hi Versi AI! My name is "+S.name+", email: "+S.email+". I'm interested in: "+service+".");
+    botMsg("You're all set, "+S.name+"! 🎉 Our team will be with you shortly.",[
+      {t:"💬 Continue on WhatsApp",fn:function(){window.open('https://wa.me/255685144667?text='+msg,'_blank');},cls:'vr-wa'}
+    ]);
+  }
+
+  setTimeout(function(){if(!opened){opened=true;openChat();}},7000);
+})();
+</script>
 </html>
