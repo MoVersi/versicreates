@@ -1,437 +1,461 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Versi AI — Web Design, Cybersecurity &amp; IT Solutions</title>
-<meta name="description" content="Versi AI builds secure, custom websites and protects businesses with cybersecurity, cloud, and IT consulting services.">
+<title>Fatimiyya · Know Her</title>
+<meta name="description" content="Beyond her name, discover the legacy of Sayyidah Fatimah al-Zahra (SA).">
+<meta name="theme-color" content="#0f111a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;500&family=Aref+Ruqaa:wght@400;700&family=Marcellus&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap">
+<style>
+  :root{
+    color-scheme: dark;
+    --night:#0f111a; --night2:#16151f; --plum:#241c2b; --plum2:#302333;
+    --dawn:#b98b72; --pearl:#f1ece4; --pearl2:#e7e0d4;
+    --ink:#1b1a24; --ink-soft:#5a5260;
+    --moon:#ece6dc; --moon-soft:#a9a1ae;
+    --gold:#d2ab62; --gold-deep:#8b6a2b;
+    --display:"Marcellus","Noto Serif Gujarati","Trajan Pro",Georgia,serif;
+    --body:"Literata","Noto Serif Gujarati",Georgia,"Times New Roman",serif;
+    --arabic:"Aref Ruqaa","Amiri","Traditional Arabic",serif;
+    --col: 34rem;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--night);color:var(--moon);font-family:var(--body);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--col);margin:0 auto;padding-inline:22px}
+  section{padding-block:clamp(56px,10vh,96px)}
+  h1,h2,.display{font-family:var(--display);font-weight:400;text-wrap:balance;letter-spacing:.01em}
+  .eyebrow{font-family:var(--display);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  p{margin:0}
+  .hon{font-size:.8em;opacity:.8;white-space:nowrap}
 
-<!-- ============ NAV ============ -->
-<header class="site-header" id="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand">VERSI&nbsp;AI<span class="dot">.</span></a>
+  /* language toggle */
+  .lang{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:10;display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(15,17,26,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(210,171,98,.35)}
+  .lang button{font:500 .7rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--moon-soft);background:none;border:0;border-radius:999px;padding:8px 10px;cursor:pointer;white-space:nowrap}
+  .lang button[aria-pressed="true"]{background:var(--gold);color:var(--night)}
+  .lang button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
-    <nav class="main-nav" id="mainNav">
-      <a href="#services">Services</a>
-      <a href="#process">Process</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Get in touch</a>
-    </nav>
+  /* geometric star tile */
+  .pattern{position:absolute;inset:0;pointer-events:none;opacity:.09;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72' fill='none' stroke='%23d2ab62' stroke-width='1'%3E%3Crect x='18' y='18' width='36' height='36'/%3E%3Crect x='18' y='18' width='36' height='36' transform='rotate(45 36 36)'/%3E%3Cpath d='M0 36h10M62 36h10M36 0v10M36 62v10'/%3E%3C/svg%3E");
+    background-size:72px 72px;
+    -webkit-mask-image:radial-gradient(ellipse at 50% 38%,#000 0%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 38%,#000 0%,transparent 72%)}
 
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+  /* HERO */
+  .hero{position:relative;overflow:hidden;text-align:center;padding-top:calc(84px + env(safe-area-inset-top,0px));padding-bottom:72px;background:var(--night)}
+  .medallion{position:relative;width:min(78vw,300px);aspect-ratio:1;max-width:100%;margin:28px auto 22px;display:grid;place-items:center}
+  .medallion svg{position:absolute;inset:0;width:100%;height:100%}
+  .medallion .ar{position:relative;font-family:var(--arabic);font-size:clamp(2.6rem,12vw,3.6rem);line-height:1.25;color:var(--gold);direction:rtl}
+  .ar small.pre{margin-bottom:.1em}
+  .medallion .ar small{display:block;font-size:.42em;color:var(--moon-soft)}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.15;margin:0 0 20px;color:var(--moon)}
+  .hero .q{font-style:italic;color:var(--moon-soft);font-size:1.05rem}
+  .scroll-cue{margin-top:40px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--display);font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--moon-soft);text-decoration:none}
+  .scroll-cue b{font-weight:400}
+  .scroll-cue span{width:1px;height:34px;background:linear-gradient(var(--gold),transparent)}
+
+  /* WE KNOW HER AS */
+  .known{background:linear-gradient(var(--night),var(--night2))}
+  .known .lead{font-family:var(--display);font-size:1.05rem;letter-spacing:.2em;text-transform:uppercase;color:var(--moon-soft);margin-bottom:26px}
+  .known ol{list-style:none;margin:0;padding:0;display:grid;gap:26px}
+  .known li{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:baseline;font-size:1.3rem;line-height:1.4}
+  .known li b{font-family:var(--display);font-weight:400;color:var(--gold);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;min-width:4.6em}
+  .known .but{margin-top:56px;font-family:var(--display);font-size:clamp(1.7rem,7.4vw,2.3rem);line-height:1.2;color:var(--moon);text-wrap:balance}
+  .known .but em{font-style:normal;color:var(--gold)}
+
+  /* QUALITIES */
+  .qualities{background:linear-gradient(var(--night2),var(--plum))}
+  .qualities p.intro{color:var(--moon-soft)}
+  .qwords{margin:26px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+  .qwords li{font-family:var(--display);font-size:1.02rem;padding:9px 16px;border:1px solid rgba(210,171,98,.45);border-radius:999px;color:var(--moon)}
+  .quote{margin-top:56px;padding-left:20px;border-left:1px solid var(--gold);font-size:1.02rem;color:var(--moon)}
+  .quote sup,.note sup{font-size:.65em}
+  sup a{color:var(--gold);text-decoration:none;padding:0 2px}
+
+  /* HER LIFE */
+  .life{background:linear-gradient(var(--plum),var(--plum2))}
+  .life h2{font-size:1.6rem;margin:0 0 30px;color:var(--moon)}
+  .pillars{list-style:none;margin:0;padding:0;display:grid;gap:0}
+  .pillars li{display:grid;grid-template-columns:5.2rem 1fr;gap:14px;padding-block:20px;border-top:1px solid rgba(236,230,220,.12)}
+  .pillars li:last-child{border-bottom:1px solid rgba(236,230,220,.12)}
+  .pillars b{font-family:var(--display);font-weight:400;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-top:.35em}
+  .pillars span{font-size:1.12rem;line-height:1.5}
+
+  /* QUESTIONS */
+  .ask{background:linear-gradient(var(--plum2),#271d2c)}
+  .ask .lead{color:var(--moon-soft)}
+  .ask .lead2{margin-top:18px;font-family:var(--display);font-size:1.7rem;color:var(--moon)}
+  .questions{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px}
+  .questions li{position:relative;padding:18px 18px 18px 50px;background:rgba(236,230,220,.045);border-radius:4px;font-size:1.08rem;line-height:1.5}
+  .questions li::before{content:"";position:absolute;left:18px;top:1.35em;width:12px;height:12px;border:1px solid var(--gold);transform:rotate(45deg)}
+  .note{margin-top:44px;font-size:.95rem;color:var(--moon-soft)}
+
+  /* SERMON */
+  .sermon{background:#271d2c}
+  .sermon h2{font-size:clamp(1.8rem,7.6vw,2.3rem);line-height:1.15;margin:10px 0 28px;color:var(--moon)}
+  .sermon blockquote{margin:0;padding-left:20px;border-left:1px solid var(--gold);display:grid;gap:18px}
+  .sermon blockquote p{font-size:1.06rem;line-height:1.75;color:var(--moon)}
+  .sermon blockquote p:first-child::first-letter{font-family:var(--display);font-size:2.6em;float:left;line-height:.9;padding:.06em .1em 0 0;color:var(--gold)}
+  html[lang="gu"] .sermon blockquote p:first-child::first-letter{all:unset}
+  .sermon .more{margin-top:28px;font-size:.98rem;color:var(--moon-soft)}
+  .sermon .more a{color:var(--gold);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding-block:6px}
+  .sermon .more a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+  /* MOURNING -> KNOWING */
+  .knowing{background:linear-gradient(#271d2c,#3a2a37)}
+  .knowing .a{font-size:1.1rem;color:var(--moon-soft)}
+  .knowing .b{margin-top:10px;font-family:var(--display);font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.15;color:var(--gold)}
+  .knowing ul{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
+  .knowing li{font-size:1.1rem;padding-left:22px;position:relative}
+  .knowing li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--gold)}
+
+  /* DAWN band */
+  .dawn{position:relative;padding-block:90px 110px;text-align:center;background:linear-gradient(#3a2a37 0%,#7b5a5c 34%,var(--dawn) 60%,#e0c9b6 82%,var(--pearl) 100%);overflow:hidden}
+  .dawn .sun{width:120px;height:120px;margin:0 auto;border-radius:50%;background:radial-gradient(circle,#fff6e6 0%,rgba(255,235,205,.65) 35%,rgba(255,225,190,0) 70%)}
+  .dawn .ar{font-family:var(--arabic);font-size:2.6rem;color:#fff8ec;margin-top:-78px;position:relative;text-shadow:0 1px 18px rgba(80,40,30,.35)}
+  .dawn .cap{margin-top:34px;font-family:var(--display);font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:#3b2a30}
+
+  /* LIGHT sections */
+  .light{background:var(--pearl);color:var(--ink);color-scheme:light}
+  .call .lead{font-family:var(--display);font-size:clamp(1.6rem,7vw,2.1rem);line-height:1.2;color:var(--ink)}
+  .call ol{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:0}
+  .call li{border-top:1px solid rgba(27,26,36,.14);font-size:1.15rem}
+  .call li a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px;color:inherit;text-decoration:none}
+  .call li a span{text-decoration:underline;text-decoration-color:rgba(139,106,43,.45);text-decoration-thickness:1px;text-underline-offset:5px}
+  .call li a .ext{flex:none;width:18px;height:18px;fill:none;stroke:var(--gold-deep);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s ease}
+  .call li a:hover span,.call li a:focus-visible span{text-decoration-color:var(--gold-deep)}
+  .call li a:hover .ext{transform:translate(2px,-2px)}
+  .call li a:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
+  .call .hint{margin-top:18px;font-size:.92rem;font-style:italic;color:var(--ink-soft)}
+  .call li:last-child{border-bottom:1px solid rgba(27,26,36,.14);color:var(--gold-deep);font-style:italic}
+
+  .closing{text-align:center;background:linear-gradient(var(--pearl),var(--pearl2));padding-top:40px}
+  .closing .ar{font-family:var(--arabic);font-size:clamp(2.2rem,10vw,3rem);color:var(--gold-deep);line-height:1.3}
+  .closing .ar small{display:block;font-size:.45em;color:var(--ink-soft)}
+  .motto{margin:30px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-family:var(--display);font-size:clamp(1.5rem,6.6vw,1.9rem);line-height:1.3;color:var(--ink)}
+  .motto li:nth-child(3){color:var(--gold-deep)}
+  .share{margin-top:40px;display:grid;gap:10px;max-width:22rem;margin-inline:auto}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;font:500 1rem/1 var(--body);padding:16px 18px;border-radius:999px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+  .btn-wa{background:#1f6b4a;color:#fff}
+  .btn-wa svg{width:20px;height:20px;fill:currentColor}
+  .btn-copy{background:transparent;color:var(--ink);border-color:rgba(27,26,36,.3)}
+  .btn:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
+
+  .refs{background:var(--pearl2);color:var(--ink-soft);padding-block:36px 48px;font-size:.86rem;line-height:1.55}
+  .refs h3{font-family:var(--display);font-weight:400;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
+  .refs ol{margin:0;padding-left:1.2em;display:grid;gap:8px}
+  .refs a{color:var(--gold-deep)}
+  .credit-logo{display:block;margin-top:30px;width:96px;height:96px;border-radius:14px;box-shadow:0 1px 0 rgba(27,26,36,.06),0 6px 18px rgba(15,17,26,.18)}
+
+  /* Gujarati: no caps tracking, a touch more line height */
+  html[lang="gu"] body{line-height:1.8}
+  html[lang="gu"] .eyebrow, html[lang="gu"] .known .lead, html[lang="gu"] .known li b, html[lang="gu"] .pillars b, html[lang="gu"] .dawn .cap, html[lang="gu"] .refs h3, html[lang="gu"] .scroll-cue{letter-spacing:.02em}
+  html[lang="gu"] .known li b, html[lang="gu"] .pillars b{font-size:.92rem}
+  html[lang="gu"] .dawn .cap{font-size:.95rem}
+  .lang button[lang="gu"]{letter-spacing:0;text-transform:none;font-size:.82rem}
+
+  /* gentle reveal: content is always visible, it only settles into place */
+  .js .rv{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s ease}
+  .js .rv:not(.in){transform:translateY(16px);opacity:.55}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv,.js .rv:not(.in){transition:none;transform:none;opacity:1}}
+
+</style>
+
+<div class="lang" role="group" aria-label="Language">
+  <button type="button" id="btn-en" data-lang="en" aria-pressed="true">English</button>
+  <button type="button" id="btn-gu" data-lang="gu" lang="gu" aria-pressed="false">ગુજરાતી</button>
+  <button type="button" id="btn-sw" data-lang="sw" lang="sw" aria-pressed="false">Kiswahili</button>
+</div>
+
+<header class="hero">
+  <div class="pattern" aria-hidden="true"></div>
+  <p class="eyebrow">Fatimiyya</p>
+  <div class="medallion">
+    <svg viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#d2ab62">
+      <g stroke-width=".8" opacity=".55">
+        <rect x="38" y="38" width="124" height="124"/>
+        <rect x="38" y="38" width="124" height="124" transform="rotate(45 100 100)"/>
+      </g>
+      <circle cx="100" cy="100" r="96" stroke-width=".6" opacity=".35"/>
+      <circle cx="100" cy="100" r="72" stroke-width=".6" opacity=".25"/>
+    </svg>
+    <p class="ar" lang="ar"><small class="pre">حضرت</small>فاطمة الزهراء<small>سلام الله عليها</small></p>
+  </div>
+  <div class="wrap">
+    <h1 data-i18n="heroTitle">Beyond her name, discover her legacy</h1>
+    <p class="q" data-i18n="heroQ">How well do we really know Lady Fatimah al‑Zahra (SA)?</p>
+    <a class="scroll-cue" href="#known"><b data-i18n="begin">Begin</b><span aria-hidden="true"></span></a>
   </div>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="trace-line" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow">Information &amp; Technology Solutions · Dar es Salaam</p>
-    <h1 class="hero-title">
-      We design it.<br>
-      We secure it.<br>
-      <em>You run your business.</em>
-    </h1>
-    <p class="hero-sub">
-      Versi AI builds the websites and protects the systems modern businesses depend on —
-      design, cybersecurity, cloud, and support, under one roof.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Start a project</a>
-      <a href="#services" class="btn btn-ghost">See what we do</a>
+<main>
+  <section class="known" id="known">
+    <div class="wrap">
+      <p class="lead rv" data-i18n="knownLead">We know her as</p>
+      <ol>
+        <li class="rv"><b data-i18n="lblDaughter">Daughter</b><span data-i18n="daughter">of the Messenger of Allah ﷺ</span></li>
+        <li class="rv"><b data-i18n="lblWife">Wife</b><span data-i18n="wife">of Imam Ali (AS)</span></li>
+        <li class="rv"><b data-i18n="lblMother">Mother</b><span data-i18n="mother">of Imam Hasan (AS) and Imam Husayn (AS)</span></li>
+      </ol>
+      <p class="but rv" data-i18n="but" data-html>But Lady Fatimah (SA) was <em>much more</em> than these relationships.</p>
     </div>
+  </section>
+
+  <section class="qualities">
+    <div class="wrap">
+      <p class="intro rv" data-i18n="teach">In the teachings preserved by the Ahlulbayt (AS), she emerges as a woman of extraordinary</p>
+      <ul class="qwords rv">
+        <li data-i18n="w1">knowledge</li>
+        <li data-i18n="w2">worship</li>
+        <li data-i18n="w3">purity</li>
+        <li data-i18n="w4">courage</li>
+        <li data-i18n="w5">spiritual consciousness</li>
+      </ul>
+      <p class="quote rv"><span data-i18n="baqir">Imam al-Baqir (AS) is reported in al-Kafi to have described Lady Fatimah (SA) in connection with knowledge. It is a reminder that her greatness was not merely inherited through lineage, but reflected in her profound spiritual and intellectual position.</span><sup><a href="#ref1" aria-label="Reference 1">1</a></sup></p>
+    </div>
+  </section>
+
+  <section class="life">
+    <div class="wrap">
+      <h2 class="rv" data-i18n="lifeTitle">Her life</h2>
+      <ul class="pillars">
+        <li class="rv"><b data-i18n="p1l">Worship</b><span data-i18n="p1">Her life was a life of worship and devotion.</span></li>
+        <li class="rv"><b data-i18n="p2l">Home</b><span data-i18n="p2">Her home became a school of faith.</span></li>
+        <li class="rv"><b data-i18n="p3l">Words</b><span data-i18n="p3">Her words became a source of guidance.</span></li>
+        <li class="rv"><b data-i18n="p4l">Courage</b><span data-i18n="p4">Her courage became a lesson in standing for truth.</span></li>
+        <li class="rv"><b data-i18n="p5l">Nearness</b><span data-i18n="p5">And her relationship with Allah became an example for those who seek closeness to Him.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ask">
+    <div class="wrap">
+      <p class="lead rv" data-i18n="askLead">This is why Fatimiyya should not simply be a time to remember that Lady Fatimah (SA) lived.</p>
+      <p class="lead2 rv" data-i18n="askLead2">It should be a time to ask:</p>
+      <ul class="questions">
+        <li class="rv" data-i18n="q1">Do we know what she stood for?</li>
+        <li class="rv" data-i18n="q2">Do we understand the depth of her worship?</li>
+        <li class="rv" data-i18n="q3">Do we appreciate her knowledge?</li>
+        <li class="rv" data-i18n="q4">Do we recognise her courage?</li>
+        <li class="rv" data-i18n="q5">Do we understand why the Ahlulbayt (AS) continue to speak of her with such profound reverence?</li>
+      </ul>
+      <p class="note rv"><span data-i18n="bihar">The Shia tradition preserves an extensive body of narrations about her life and virtues, including in Bihar al-Anwar, which dedicates substantial material to Sayyidah Fatimah al-Zahra (SA).</span><sup><a href="#ref2" aria-label="Reference 2">2</a></sup></p>
+    </div>
+  </section>
+
+
+  <section class="sermon" id="sermon">
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="sermonLabel">Khutbah</p>
+      <h2 class="rv" data-i18n="sermonTitle">Sermon of Fadak</h2>
+      <blockquote class="rv">
+        <p data-i18n="sermonP1">Glory be to Allah for His great blessings, and gratitude to Him for that which He has inspired, and praise be to Him for what He has brought to pass. From the all-encompassing blessings that He grants to the ever-expansive grace that He bestows and all the bounties that He continuously confers. Its magnitude is greater than can be enumerated, its extent is beyond measure and its limit is beyond comprehension. He has invited the people to express their gratitude in order to seek its increase and continuity, called upon them to praise Him by augmenting it and followed up by bidding them to ask for more of its like [in the Hereafter].</p>
+        <p data-i18n="sermonP2">I bear witness that there is no god but Allah, alone, having no partners — a statement the inner meaning of which has been defined as sincerity, its means have been instilled in the hearts and its meaning gleams in the minds. He cannot be perceived by sight, described by words or depicted by imaginations. He originated everything from nothing that existed before, and created everything without following any previous model. He fashioned everything with His power and made it all with His will, without any need for bringing it into being or any possible benefit that could come from forming it; only the affirmation of His wisdom, the proclamation of His obedience, the manifestation of His power, the servility of His subjects and the exaltation of His call. Then He placed reward in obedience and punishment in disobedience to Him, in order to turn His servants away from His chastisement and urge them towards His Paradise.</p>
+      </blockquote>
+      <p class="more rv" data-i18n="sermonMore" data-html>To read the full sermon, <a href="https://al-islam.org/sermon-fadak-tahir-ridha-jaffer/sermon-fadak#sermon" target="_blank" rel="noopener">click here</a>.</p>
+    </div>
+  </section>
+
+  <section class="knowing">
+    <div class="wrap">
+      <p class="a rv" data-i18n="mourn">Fatimiyya is therefore not only about mourning her loss.</p>
+      <p class="b rv" data-i18n="mourn2">It is about knowing Lady Fatimah (SA).</p>
+      <ul>
+        <li class="rv" data-i18n="k1">Knowing the woman behind the name.</li>
+        <li class="rv" data-i18n="k2">Understanding the values behind her life.</li>
+        <li class="rv" data-i18n="k3">Learning from the daughter of Rasulullah ﷺ.</li>
+        <li class="rv" data-i18n="k4">And allowing her example to transform the way we live our own faith.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="dawn" aria-hidden="true">
+    <div class="sun"></div>
+    <p class="ar" lang="ar">الزهراء</p>
+    <p class="cap" data-i18n="dawnCap">al-Zahra · the radiant one</p>
   </div>
-</section>
 
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="node"></span>
-      <h2>What we do</h2>
+  <section class="call light">
+    <div class="wrap">
+      <p class="lead rv" data-i18n="callLead">This is Lady Fatimah (SA). Don’t just hear her name.</p>
+      <ol>
+        <li class="rv"><a href="https://al-islam.org/fatimah-al-zahra-spring-inspiration-saleem-bhimji/session-6-ideal-woman" target="_blank" rel="noopener"><span data-i18n="c1">Discover her personality.</span><svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a></li>
+        <li class="rv"><a href="https://al-islam.org/life-fatimah-az-zahra-principal-all-women-study-and-analysis-baqir-sharif-al-qurashi" target="_blank" rel="noopener"><span data-i18n="c2">Study her life.</span><svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a></li>
+        <li class="rv"><a href="https://al-islam.org/fatimah-al-zahra-spring-inspiration-saleem-bhimji/session-7-defense-imamate" target="_blank" rel="noopener"><span data-i18n="c3">Understand her message.</span><svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a></li>
+        <li class="rv"><a href="https://al-islam.org/fatimah-al-zahra-spring-inspiration-saleem-bhimji/session-10-fatimiyyah-ashura" target="_blank" rel="noopener"><span data-i18n="c4">And let her legacy live through you.</span><svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a></li>
+      </ol>
+      <p class="hint rv" data-i18n="hint">Click on the text for more information.</p>
     </div>
+  </section>
 
-    <div class="service-grid">
-
-      <article class="service-card service-card--hero">
-        <svg viewBox="0 0 48 48" fill="none" class="s-icon">
-          <rect x="5" y="9" width="38" height="28" rx="2" stroke="currentColor" stroke-width="1.6"/>
-          <line x1="5" y1="16" x2="43" y2="16" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="10" cy="12.5" r="1.2" fill="currentColor"/>
-          <circle cx="14.5" cy="12.5" r="1.2" fill="currentColor"/>
-          <line x1="12" y1="23" x2="34" y2="23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          <line x1="12" y1="28" x2="27" y2="28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <h3>Creative Website Design</h3>
-        <p>Custom-built, conversion-focused websites that represent your brand properly — not a template with your logo dropped in.</p>
-      </article>
-
-      <article class="service-card service-card--hero">
-        <svg viewBox="0 0 48 48" fill="none" class="s-icon">
-          <path d="M24 5L42 12V22C42 33 34.5 40.5 24 44C13.5 40.5 6 33 6 22V12L24 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M17 24L22 29L32 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Cybersecurity</h3>
-        <p>Protection for your networks, devices, and data — from setup and audits to ongoing monitoring against real threats.</p>
-      </article>
-
-      <article class="service-card">
-        <svg viewBox="0 0 32 32" fill="none" class="s-icon s-icon--sm">
-          <path d="M9 22C6 22 4 20 4 17.5C4 15.3 5.6 13.5 7.8 13.1C8.3 9.7 11.3 7 15 7C18.4 7 21.2 9.2 22 12.2C24.4 12.6 26 14.6 26 17C26 19.8 23.8 22 21 22H9Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
-        </svg>
-        <h3>Cloud Hosting &amp; Backup</h3>
-        <p>Reliable cloud infrastructure with automated backups, so your business stays online and your data stays safe.</p>
-      </article>
-
-      <article class="service-card">
-        <svg viewBox="0 0 32 32" fill="none" class="s-icon s-icon--sm">
-          <rect x="9" y="4" width="14" height="24" rx="2.5" stroke="currentColor" stroke-width="1.4"/>
-          <line x1="9" y1="22" x2="23" y2="22" stroke="currentColor" stroke-width="1.4"/>
-          <circle cx="16" cy="25" r="1" fill="currentColor"/>
-        </svg>
-        <h3>App Development</h3>
-        <p>Custom mobile and web applications built around how your business actually operates, not the other way around.</p>
-      </article>
-
-      <article class="service-card">
-        <svg viewBox="0 0 32 32" fill="none" class="s-icon s-icon--sm">
-          <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.4"/>
-          <path d="M16 4V7.5M16 24.5V28M28 16H24.5M7.5 16H4M24.2 7.8L21.8 10.2M10.2 21.8L7.8 24.2M24.2 24.2L21.8 21.8M10.2 10.2L7.8 7.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-        </svg>
-        <h3>IT Consulting &amp; Support</h3>
-        <p>Ongoing guidance and hands-on support so your technology keeps working for you as your business grows.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="process" id="process">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="node"></span>
-      <h2>How a project runs</h2>
-    </div>
-
-    <ol class="process-list">
-      <li>
-        <span class="p-index">01</span>
-        <div>
-          <h3>Discovery call</h3>
-          <p>We learn your business, your goals, and where technology is currently helping — or holding you back.</p>
-        </div>
-      </li>
-      <li>
-        <span class="p-index">02</span>
-        <div>
-          <h3>Plan &amp; proposal</h3>
-          <p>You get a clear scope, timeline, and cost — no vague estimates or hidden add-ons later.</p>
-        </div>
-      </li>
-      <li>
-        <span class="p-index">03</span>
-        <div>
-          <h3>Build &amp; secure</h3>
-          <p>We design, develop, and lock down every system before it goes anywhere near production.</p>
-        </div>
-      </li>
-      <li>
-        <span class="p-index">04</span>
-        <div>
-          <h3>Launch &amp; support</h3>
-          <p>Your project goes live, and we stay on to monitor, maintain, and support it going forward.</p>
-        </div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <div class="wrap about-inner">
-    <div class="section-head">
-      <span class="node"></span>
-      <h2>About Versi AI</h2>
-    </div>
-    <p class="about-copy">
-      <!-- PLACEHOLDER: replace with your real founding story / mission, 2-4 sentences -->
-      Versi AI is an IT company built on a simple idea: businesses shouldn't have to choose between
-      good design and good security. We handle both — building the websites and applications that
-      represent your brand, and the cybersecurity and cloud infrastructure that keep them, and your data, safe.
-    </p>
-  </div>
-</section>
-
-    
-
-<!-- ============ CONTACT ============ -->
-<section class="contact" id="contact">
-  <div class="wrap contact-inner">
-    <div class="section-head">
-      <span class="node"></span>
-      <h2>Let's build something secure</h2>
-    </div>
-
-    <div class="contact-grid">
-      <form id="contactForm" class="contact-form" novalidate action="https://formspree.io/f/xvzjjjgo" method="POST">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-          <span class="error" id="nameError"></span>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-          <span class="error" id="emailError"></span>
-        </div>
-        <div class="field">
-          <label for="service">What do you need?</label>
-          <select id="service" name="service">
-            <option value="Website Design">Website Design</option>
-            <option value="Cybersecurity">Cybersecurity</option>
-            <option value="Cloud Hosting & Backup">Cloud Hosting &amp; Backup</option>
-            <option value="App Development">App Development</option>
-            <option value="IT Consulting & Support">IT Consulting &amp; Support</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <span class="error" id="messageError"></span>
-        </div>
-        <button type="submit" class="btn btn-primary btn-block">Send message</button>
-        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-      </form>
-
-      <div class="contact-info">
-        <!-- PLACEHOLDER: replace every value below with your real details -->
-        <div>
-          <span class="label">Email</span>
-          <a href="mailto:mohammedmohsinversi8@gmail.com">mohammedmohsinversi8@gmail.com</a>
-        </div>
-        <div>
-          <span class="label">Phone / WhatsApp</span>
-          <a href="tel:+255685144667">+255 685 144 667</a>
-        </div>
-        <div>
-          <span class="label">Location</span>
-          <p>Dar es Salaam, Tanzania</p>
-        </div>
-        <div class="social-links">
-          <a href="https://www.instagram.com/versi.creates/" aria-label="Instagram">Instagram</a>
-        </div>
+  <section class="closing light">
+    <div class="wrap">
+      <p class="ar rv" lang="ar"><small class="pre">حضرت</small>فاطمة الزهراء<small>سلام الله عليها</small></p>
+      <ul class="motto rv">
+        <li data-i18n="m1">Know her.</li>
+        <li data-i18n="m2">Learn from her.</li>
+        <li data-i18n="m3">Live her values.</li>
+      </ul>
+      <div class="share">
+        <a class="btn btn-wa" id="wa" href="https://wa.me/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg>
+          <span data-i18n="shareWa">Share on WhatsApp</span>
+        </a>
+        <button class="btn btn-copy" id="copy" type="button"><span data-i18n="copy">Copy link</span></button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span class="brand brand--sm">VERSI&nbsp;AI<span class="dot">.</span></span>
-    <p>&copy; <span id="year"></span> Versi AI. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="scriptJS.js"></script>
-</body>
-<!-- ============ CHATBOT ============ -->
-<style>
-#vc-widget{position:fixed;bottom:24px;right:24px;z-index:9999;font-family:'Space Grotesk',sans-serif}
-#vc-btn{width:56px;height:56px;border-radius:50%;background:#0f0f0f;border:1.5px solid rgba(255,255,255,0.18);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.4);transition:transform .2s ease}
-#vc-btn:hover{transform:scale(1.08)}
-#vc-window{position:absolute;bottom:68px;right:0;width:320px;display:flex;flex-direction:column;background:#0f0f0f;border:1px solid rgba(255,255,255,0.1);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.5);visibility:hidden;pointer-events:none;opacity:0;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
-#vc-window.open{visibility:visible;pointer-events:all;opacity:1;transform:translateY(0)}
-#vc-head{padding:14px 16px;background:#161616;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px}
-.vc-av{width:36px;height:36px;border-radius:50%;background:#1e1e1e;border:1.5px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.vc-hi .vc-name{margin:0;font-size:13.5px;font-weight:600;color:#f0f0f0}
-.vc-hi .vc-on{margin:0;font-size:11px;color:#6bda8f;display:flex;align-items:center;gap:4px}
-.vc-hi .vc-on::before{content:'';width:6px;height:6px;border-radius:50%;background:#6bda8f;display:inline-block}
-#vc-x{margin-left:auto;background:none;border:none;color:rgba(255,255,255,0.35);cursor:pointer;font-size:20px;line-height:1;padding:0}
-#vc-x:hover{color:#fff}
-#vc-msgs{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:9px;max-height:320px}
-#vc-msgs::-webkit-scrollbar{width:3px}
-#vc-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1);border-radius:2px}
-.vm{max-width:88%}
-.vm-bot .vb{background:#1e1e1e;color:#e5e5e5;border-radius:4px 12px 12px 12px}
-.vm-user{align-self:flex-end}
-.vm-user .vb{background:#efefef;color:#0f0f0f;border-radius:12px 4px 12px 12px}
-.vb{padding:9px 13px;font-size:13px;line-height:1.55;animation:vfade .2s ease}
-@keyframes vfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-.vr-wrap{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
-.vr{background:none;border:1px solid rgba(255,255,255,0.18);color:#ddd;border-radius:999px;padding:5px 11px;font-size:11.5px;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:background .15s}
-.vr:hover{background:rgba(255,255,255,0.08)}
-.vr:disabled{opacity:0.35;cursor:default}
-.vr-wa{background:#1f6b4a;border-color:#1f6b4a;color:#fff}
-.vr-wa:hover{background:#27855d}
-#vc-inp-row{padding:10px 12px;border-top:1px solid rgba(255,255,255,0.07);display:none;gap:8px;align-items:center}
-#vc-inp-row.show{display:flex}
-#vc-inp{flex:1;background:#1a1a1a;border:1px solid rgba(255,255,255,0.1);border-radius:999px;color:#f0f0f0;font-family:'Space Grotesk',sans-serif;font-size:13px;padding:8px 13px;outline:none}
-#vc-inp::placeholder{color:rgba(255,255,255,0.25)}
-#vc-snd{background:#efefef;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-</style>
-
-<div id="vc-widget">
-  <div id="vc-window" role="dialog" aria-label="Versi AI chat">
-    <div id="vc-head">
-      <div class="vc-av">⚡</div>
-      <div class="vc-hi">
-        <p class="vc-name">Versi Assistant</p>
-        <p class="vc-on">Online now</p>
-      </div>
-      <button id="vc-x" aria-label="Close">×</button>
+  <footer class="refs">
+    <div class="wrap">
+      <h3 data-i18n="refs">References</h3>
+      <ol>
+        <li id="ref1">al-Kafi, narration of Imam al-Baqir (AS). Available on <a href="https://thaqalayn.net" target="_blank" rel="noopener">Thaqalayn</a>.</li>
+        <li id="ref2">Allamah Majlisi, Bihar al-Anwar, vol. 43. Available on <a href="https://hubeali.com" target="_blank" rel="noopener">HubeAli</a>.</li>
+      </ol>
+      <img class="credit-logo" src="data:image/webp;base64,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" alt="Versi AI" width="96" height="96">
     </div>
-    <div id="vc-msgs"></div>
-    <div id="vc-inp-row">
-      <input type="text" id="vc-inp" placeholder="Type here..." autocomplete="off">
-      <button id="vc-snd" aria-label="Send">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f0f0f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      </button>
-    </div>
-  </div>
-  <button id="vc-btn" aria-label="Chat with us">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f0f0f0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-  </button>
-</div>
+  </footer>
+</main>
 
 <script>
 (function(){
-  var win=document.getElementById('vc-window'),btn=document.getElementById('vc-btn'),
-      xBtn=document.getElementById('vc-x'),msgs=document.getElementById('vc-msgs'),
-      inpRow=document.getElementById('vc-inp-row'),inp=document.getElementById('vc-inp'),
-      snd=document.getElementById('vc-snd');
-  var S={name:'',email:''},opened=false;
+  document.documentElement.classList.add('js');
 
-  btn.addEventListener('click',function(){
-    if(!opened){opened=true;openChat();}
-    else win.classList.toggle('open');
-  });
-  xBtn.addEventListener('click',function(){win.classList.remove('open');});
+  var SW = {
+    heroTitle:"Zaidi ya jina lake, gundua urithi wake",
+    heroQ:"Je, kweli tunamfahamu Bibi Fatimah al‑Zahra (a.s.) kwa kiasi gani?",
+    begin:"Anza",
+    knownLead:"Tunamfahamu kama",
+    lblDaughter:"Binti", daughter:"wa Mtume wa Allah\u00a0ﷺ",
+    lblWife:"Mke", wife:"wa Imam Ali (a.s.)",
+    lblMother:"Mama", mother:"wa Imam Hasan (a.s.) na Imam Husayn (a.s.)",
+    but:"Lakini Bibi Fatimah (a.s.) alikuwa <em>zaidi sana</em> ya mahusiano haya.",
+    teach:"Katika mafundisho yaliyohifadhiwa na Ahlul Bayt (a.s.), anajitokeza kama mwanamke wa kipekee mwenye",
+    w1:"elimu", w2:"ibada", w3:"utakasifu", w4:"ujasiri", w5:"utambuzi wa kiroho",
+    baqir:"Imepokewa katika al-Kafi kwamba Imam al-Baqir (a.s.) alimwelezea Bibi Fatimah (a.s.) kwa kuhusiana na elimu. Ni ukumbusho kwamba utukufu wake haukutokana na nasaba peke yake, bali ulidhihirika katika daraja lake la juu la kiroho na kielimu.",
+    lifeTitle:"Maisha yake",
+    p1l:"Ibada", p1:"Maisha yake yalikuwa maisha ya ibada na kujitolea kwa Allah.",
+    p2l:"Nyumba", p2:"Nyumba yake ikawa shule ya imani.",
+    p3l:"Maneno", p3:"Maneno yake yakawa chanzo cha uongofu.",
+    p4l:"Ujasiri", p4:"Ujasiri wake ukawa funzo la kusimama kwa ajili ya haki.",
+    p5l:"Ukaribu", p5:"Na uhusiano wake na Allah ukawa mfano kwa wale wanaotafuta kuwa karibu Naye.",
+    askLead:"Ndiyo maana Fatimiyya haipaswi kuwa tu wakati wa kukumbuka kwamba Bibi Fatimah (a.s.) aliishi.",
+    askLead2:"Unapaswa kuwa wakati wa kujiuliza:",
+    q1:"Je, tunajua alisimamia nini?",
+    q2:"Je, tunaelewa kina cha ibada yake?",
+    q3:"Je, tunathamini elimu yake?",
+    q4:"Je, tunatambua ujasiri wake?",
+    q5:"Je, tunaelewa kwa nini Ahlul Bayt (a.s.) wanaendelea kumzungumzia kwa heshima kubwa namna hii?",
+    bihar:"Mapokeo ya Shia yamehifadhi hadithi nyingi kuhusu maisha na fadhila zake, ikiwemo katika Bihar al-Anwar, ambayo imetenga sehemu kubwa kwa Sayyidah Fatimah al-Zahra (a.s.).",
+    mourn:"Kwa hiyo Fatimiyya si kuomboleza kuondokewa naye peke yake.",
+    mourn2:"Ni kumfahamu Bibi Fatimah (a.s.).",
+    k1:"Kumfahamu mwanamke aliye nyuma ya jina.",
+    k2:"Kuelewa maadili yaliyo nyuma ya maisha yake.",
+    k3:"Kujifunza kutoka kwa binti wa Rasulullah\u00a0ﷺ.",
+    k4:"Na kuruhusu mfano wake ubadilishe jinsi tunavyoishi imani yetu.",
+    dawnCap:"al-Zahra · mwenye nuru",
+    callLead:"Huyu ni Bibi Fatimah (a.s.). Usisikie jina lake tu.",
+    c1:"Gundua haiba yake.",
+    c2:"Soma maisha yake.",
+    c3:"Elewa ujumbe wake.",
+    c4:"Na acha urithi wake uishi kupitia wewe.",
+    hint:"Bofya maandishi kwa maelezo zaidi.",
+    sermonLabel:"Khutba",
+    sermonTitle:"Hotuba ya Fadak",
+    sermonP1:"Sifa njema zote ni za Allah kwa neema Zake kuu, na shukrani ni Zake kwa yale aliyotuilhamisha, na himidi ni Yake kwa yale aliyoyatanguliza. Kuanzia neema zilizoenea kote ambazo Yeye huzitoa, hadi fadhila pana ambazo Yeye huzimiminia, na vipawa vyote ambavyo Yeye huvitunuku bila kukoma. Wingi wake ni mkubwa kuliko kuweza kuhesabiwa, upana wake hauna kipimo na mwisho wake haufikiwi na ufahamu. Amewaita watu watoe shukrani ili kutafuta kuongezeka na kudumu kwake, akawaita wamhimidi ili aziongeze, kisha akawahimiza waombe zaidi mfano wake [katika Akhera].",
+    sermonP2:"Nashuhudia kwamba hapana mungu ila Allah, peke Yake, hana mshirika — tamko ambalo maana yake ya ndani imefasiriwa kuwa ni ikhlasi, njia zake zimepandwa ndani ya nyoyo na maana yake inang'aa ndani ya akili. Haonekani kwa macho, wala haelezeki kwa maneno, wala hachoreki kwa fikra. Alivianzisha vitu vyote bila kuwepo kitu chochote kabla yake, na akaviumba vitu vyote bila kufuata mfano wowote uliotangulia. Aliviumba vitu vyote kwa uwezo Wake na akavifanya kwa matakwa Yake, bila haja yoyote ya kuvileta kuwepo wala manufaa yoyote ambayo yangepatikana kwa kuviumba; isipokuwa kuthibitisha hekima Yake, kutangaza utiifu Wake, kudhihirisha uwezo Wake, unyenyekevu wa viumbe Vyake na kutukuza wito Wake. Kisha akaweka thawabu katika kumtii na adhabu katika kumuasi, ili kuwaepusha waja Wake na adhabu Yake na kuwasukuma kuelekea Pepo Yake.",
+    sermonMore:'Kusoma hotuba kamili, <a href="https://al-islam.org/sermon-fadak-tahir-ridha-jaffer/sermon-fadak#sermon" target="_blank" rel="noopener">bofya hapa</a>.',
+    m1:"Mfahamu.", m2:"Jifunze kutoka kwake.", m3:"Ishi maadili yake.",
+    shareWa:"Shiriki kwenye WhatsApp", copy:"Nakili kiungo", copied:"Kiungo kimenakiliwa",
+    refs:"Marejeo"
+  };
 
-  function openChat(){
-    win.classList.add('open');
-    setTimeout(function(){
-      botMsg("Hi there! 👋 I'm Versi, your AI assistant. What can I help you with today?",menu());
-    },350);
-  }
+  var GU = {
+    heroTitle:"એમના નામથી આગળ, એમનો વારસો ઓળખો",
+    heroQ:"આપણે જનાબે ફાતિમા અલ‑ઝહરા (સ.અ.) ને ખરેખર કેટલા ઓળખીએ છીએ?",
+    begin:"શરૂ કરો",
+    knownLead:"આપણે એમને ઓળખીએ છીએ",
+    lblDaughter:"દીકરી", daughter:"રસૂલુલ્લાહ ﷺ ના",
+    lblWife:"પત્ની", wife:"ઇમામ અલી (અ.સ.) ના",
+    lblMother:"મા", mother:"ઇમામ હસન (અ.સ.) અને ઇમામ હુસૈન (અ.સ.) ના",
+    but:"પણ જનાબે ફાતિમા (સ.અ.) આ સંબંધો કરતાં <em>ઘણાં વધારે</em> હતાં.",
+    teach:"અહલેબૈત (અ.સ.) એ સાચવેલી તાલીમાતમાં, તેઓ એક અસાધારણ સ્ત્રી તરીકે સામે આવે છે, જેમનામાં હતું",
+    w1:"ઇલ્મ", w2:"ઇબાદત", w3:"પાકીઝગી", w4:"હિંમત", w5:"રૂહાની જાગૃતિ",
+    baqir:"અલ-કાફીમાં રિવાયત છે કે ઇમામ અલ-બાકિર (અ.સ.) એ જનાબે ફાતિમા (સ.અ.) નું વર્ણન ઇલ્મના સંબંધમાં કર્યું. આ યાદ અપાવે છે કે એમની મહાનતા ફક્ત ખાનદાનથી વારસામાં નહોતી મળી, પણ એમના ઊંડા રૂહાની અને ઇલ્મી દરજ્જામાં ઝળકતી હતી.",
+    lifeTitle:"એમની ઝિંદગી",
+    p1l:"ઇબાદત", p1:"એમની ઝિંદગી ઇબાદત અને બંદગીની ઝિંદગી હતી.",
+    p2l:"ઘર", p2:"એમનું ઘર ઈમાનની મદરેસા બની ગયું.",
+    p3l:"કલામ", p3:"એમના શબ્દો હિદાયતનો ઝરિયો બન્યા.",
+    p4l:"હિંમત", p4:"એમની હિંમત હક માટે ઊભા રહેવાનો સબક બની.",
+    p5l:"કુરબત", p5:"અને અલ્લાહ સાથેનો એમનો સંબંધ, એની નજીક થવા ચાહતા લોકો માટે એક મિસાલ બની ગયો.",
+    askLead:"એટલા માટે ફાતિમિય્યા ફક્ત એ યાદ કરવાનો સમય ન હોવો જોઈએ કે જનાબે ફાતિમા (સ.અ.) આ દુનિયામાં હતાં.",
+    askLead2:"આ સમય પૂછવાનો છે:",
+    q1:"શું આપણે જાણીએ છીએ કે તેઓ કઈ વાત માટે ઊભા રહ્યાં?",
+    q2:"શું આપણે એમની ઇબાદતની ઊંડાઈ સમજીએ છીએ?",
+    q3:"શું આપણે એમના ઇલ્મની કદર કરીએ છીએ?",
+    q4:"શું આપણે એમની હિંમતને ઓળખીએ છીએ?",
+    q5:"શું આપણે સમજીએ છીએ કે અહલેબૈત (અ.સ.) આજે પણ એમની વાત આટલા ઊંડા એહતેરામથી કેમ કરે છે?",
+    bihar:"શિયા રિવાયતોમાં એમની ઝિંદગી અને ફઝાઇલ વિશે ઘણી રિવાયતો સચવાયેલી છે, જેમ કે બિહારુલ અનવાર, જેમાં સૈયદા ફાતિમા અલ-ઝહરા (સ.અ.) વિશે ઘણી સામગ્રી છે.",
+    mourn:"એટલે ફાતિમિય્યા ફક્ત એમના ગમમાં અઝાદારી કરવાનું નામ નથી.",
+    mourn2:"એ જનાબે ફાતિમા (સ.અ.) ને ઓળખવાનું નામ છે.",
+    k1:"નામ પાછળની સ્ત્રીને ઓળખવી.",
+    k2:"એમની ઝિંદગી પાછળના ઉસૂલો સમજવા.",
+    k3:"રસૂલુલ્લાહ ﷺ ની દીકરી પાસેથી શીખવું.",
+    k4:"અને એમની મિસાલને આપણું ઈમાન જીવવાની રીત બદલવા દેવી.",
+    dawnCap:"અલ-ઝહરા · રોશન ચમકતી",
+    callLead:"આ છે જનાબે ફાતિમા (સ.અ.). ફક્ત એમનું નામ ન સાંભળો.",
+    c1:"એમની શખ્સિયતને શોધો.",
+    c2:"એમની ઝિંદગીનો અભ્યાસ કરો.",
+    c3:"એમનો પૈગામ સમજો.",
+    c4:"અને એમનો વારસો તમારા થકી જીવંત રાખો.",
+    hint:"વધુ માહિતી માટે લખાણ પર ક્લિક કરો.",
+    sermonLabel:"ખુત્બો",
+    sermonTitle:"ખુત્બએ ફદક",
+    sermonP1:"અલ્લાહની તેની મહાન નેઅમતો માટે હમ્દ છે, અને જે તેણે ઇલ્હામ કર્યું તેના માટે તેનો શુક્ર છે, અને જે તેણે આગળ મોકલ્યું તેના માટે તેની સના છે. તે નેઅમતો જે તેણે સૌ પર વરસાવી, તે વિશાળ કૃપા જે તેણે બક્ષી, અને તે બક્ષિશો જે તે સતત આપતો રહે છે. તેની સંખ્યા ગણતરીથી વધારે છે, તેનો વિસ્તાર માપથી પર છે અને તેની હદ સમજથી બહાર છે. તેણે લોકોને તેમાં વધારો અને સાતત્ય મેળવવા માટે શુક્ર અદા કરવાની દાવત આપી, તેને વધારીને પોતાની હમ્દ તરફ બોલાવ્યા, અને [આખેરતમાં] એવી જ નેઅમતો વધુ માંગવાની તાકીદ કરી.",
+    sermonP2:"હું ગવાહી આપું છું કે અલ્લાહ સિવાય કોઈ માબૂદ નથી, તે એક છે, તેનો કોઈ શરીક નથી. આ એવો કલેમો છે જેનો અંદરનો અર્થ ઇખ્લાસ ઠરાવવામાં આવ્યો છે, જેના સાધનો દિલોમાં રોપવામાં આવ્યા છે અને જેનો અર્થ અક્લોમાં ઝળકે છે. તેને નજરથી જોઈ શકાતો નથી, શબ્દોથી વર્ણવી શકાતો નથી અને કલ્પનાથી ચીતરી શકાતો નથી. તેણે દરેક વસ્તુને એવી શૂન્યતામાંથી પેદા કરી જે પહેલાં મોજૂદ ન હતી, અને કોઈ અગાઉના નમૂના વગર દરેક વસ્તુનું સર્જન કર્યું. તેણે પોતાની કુદરતથી દરેક વસ્તુને ઘડી અને પોતાની મરજીથી તેને બનાવી; ન તો તેને અસ્તિત્વમાં લાવવાની કોઈ જરૂર હતી, ન તેને ઘડવામાંથી કોઈ ફાયદો મેળવવાનો હતો; ફક્ત પોતાની હિકમતની સાબિતી, પોતાની ઇતાઅતનું એલાન, પોતાની કુદરતનું પ્રદર્શન, પોતાના બંદાઓની આજીઝી અને પોતાની દાવતની બુલંદી માટે. પછી તેણે પોતાની ઇતાઅતમાં સવાબ અને પોતાની નાફરમાનીમાં અઝાબ રાખ્યો, જેથી પોતાના બંદાઓને પોતાના અઝાબથી દૂર રાખે અને તેમને પોતાની જન્નત તરફ દોરે.",
+    sermonMore:'સંપૂર્ણ ખુત્બો વાંચવા માટે <a href="https://al-islam.org/sermon-fadak-tahir-ridha-jaffer/sermon-fadak#sermon" target="_blank" rel="noopener">અહીં ક્લિક કરો</a>.',
+    m1:"એમને ઓળખો.", m2:"એમનાથી શીખો.", m3:"એમના ઉસૂલો જીવો.",
+    shareWa:"WhatsApp પર શેર કરો", copy:"લિંક કૉપી કરો", copied:"લિંક કૉપી થઈ ગઈ",
+    refs:"હવાલા"
+  };
 
-  function menu(){
-    return[
-      {t:"🌐 Our services",fn:showServices},
-      {t:"🚀 Start a project",fn:startProject},
-      {t:"💰 Pricing",fn:showPricing},
-      {t:"💬 Talk to the team",fn:talkHuman}
-    ];
-  }
+  var nodes = document.querySelectorAll('[data-i18n]');
+  var EN = {};
+  nodes.forEach(function(n){ EN[n.dataset.i18n] = n.hasAttribute('data-html') ? n.innerHTML : n.textContent; });
+  EN.copied = "Link copied";
+  var current = 'en';
 
-  function botMsg(text,replies){
-    var w=document.createElement('div');w.className='vm vm-bot';
-    var b=document.createElement('div');b.className='vb';b.textContent=text;
-    w.appendChild(b);
-    if(replies&&replies.length){
-      var rw=document.createElement('div');rw.className='vr-wrap';
-      replies.forEach(function(r){
-        var rb=document.createElement('button');rb.className='vr'+(r.cls?' '+r.cls:'');
-        rb.textContent=r.t;
-        rb.addEventListener('click',function(){disableReplies();userMsg(r.t);setTimeout(r.fn,350);});
-        rw.appendChild(rb);
-      });
-      w.appendChild(rw);
-    }
-    msgs.appendChild(w);msgs.scrollTop=msgs.scrollHeight;
-  }
-
-  function userMsg(t){
-    var w=document.createElement('div');w.className='vm vm-user';
-    var b=document.createElement('div');b.className='vb';b.textContent=t;
-    w.appendChild(b);msgs.appendChild(w);msgs.scrollTop=msgs.scrollHeight;
-  }
-
-  function disableReplies(){
-    msgs.querySelectorAll('.vr').forEach(function(b){b.disabled=true;});
-  }
-
-  function showInput(ph,cb){
-    inpRow.classList.add('show');inp.placeholder=ph;inp.value='';inp.focus();
-    function go(){
-      var v=inp.value.trim();if(!v)return;
-      inpRow.classList.remove('show');
-      snd.removeEventListener('click',go);inp.removeEventListener('keydown',kh);
-      userMsg(v);setTimeout(function(){cb(v);},350);
-    }
-    function kh(e){if(e.key==='Enter')go();}
-    snd.addEventListener('click',go);inp.addEventListener('keydown',kh);
-  }
-
-  function showServices(){
-    botMsg("Here's what we offer:",[ 
-      {t:"🌐 Website Design",fn:function(){svcInfo('Custom-built websites that represent your brand properly — conversion-focused, not a template.');}},
-      {t:"🛡 Cybersecurity",fn:function(){svcInfo('Network, device & data protection — from setup and audits to ongoing monitoring.');}},
-      {t:"☁️ Cloud Hosting",fn:function(){svcInfo('Reliable cloud infrastructure with automated backups so your business stays online.');}},
-      {t:"📱 App Development",fn:function(){svcInfo('Custom mobile & web apps built around how your business actually operates.');}},
-      {t:"💡 IT Consulting",fn:function(){svcInfo('Hands-on guidance and support so your technology keeps working as you grow.');}}
-    ]);
-  }
-
-  function svcInfo(desc){
-    botMsg(desc,[
-      {t:"Start a project →",fn:startProject},
-      {t:"← Back",fn:showServices}
-    ]);
-  }
-
-  function showPricing(){
-    botMsg("Our pricing is tailored to each project — no fixed templates, no hidden fees. We scope and quote based on your specific needs.",[
-      {t:"Get a free quote",fn:startProject},
-      {t:"← Main menu",fn:function(){botMsg("What else can I help you with?",menu());}}
-    ]);
-  }
-
-  function talkHuman(){
-    botMsg("Reach us directly — we respond fast.",[
-      {t:"💬 WhatsApp",fn:function(){window.open('https://wa.me/255685144667?text=Hi%20Versi%20AI!%20I%20found%20you%20via%20your%20website.','_blank');},cls:'vr-wa'},
-      {t:"📧 Email",fn:function(){window.open('mailto:mohammedmohsinversi8@gmail.com','_blank');}},
-      {t:"← Main menu",fn:function(){botMsg("What else can I help you with?",menu());}}
-    ]);
-  }
-
-  function startProject(){
-    botMsg("Let's get you started. What's your name?");
-    showInput("Your name...",function(name){
-      S.name=name;
-      botMsg("Nice to meet you, "+name+"! What's your email?");
-      showInput("your@email.com",function(email){
-        S.email=email;
-        botMsg("Which service interests you most?",[
-          {t:"Website Design",fn:function(){finish('Website Design');}},
-          {t:"Cybersecurity",fn:function(){finish('Cybersecurity');}},
-          {t:"Cloud Hosting",fn:function(){finish('Cloud Hosting');}},
-          {t:"App Development",fn:function(){finish('App Development');}},
-          {t:"IT Consulting",fn:function(){finish('IT Consulting');}},
-          {t:"Not sure yet",fn:function(){finish('Not sure yet');}}
-        ]);
-      });
+  function setLang(l){
+    current = l;
+    var dict = l === 'gu' ? GU : l === 'sw' ? SW : EN;
+    nodes.forEach(function(n){
+      var v = dict[n.dataset.i18n]; if (v == null) v = EN[n.dataset.i18n]; if (v == null) return;
+      if (n.hasAttribute('data-html')) n.innerHTML = v; else n.textContent = v;
     });
+    document.documentElement.setAttribute('lang', l);
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'); });
+    try { localStorage.setItem('fatemiyya-lang', l); } catch(e){}
   }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  try { var saved = localStorage.getItem('fatemiyya-lang'); if (saved === 'gu' || saved === 'sw') setLang(saved); } catch(e){}
 
-  function finish(service){
-    var msg=encodeURIComponent("Hi Versi AI! My name is "+S.name+", email: "+S.email+". I'm interested in: "+service+".");
-    botMsg("You're all set, "+S.name+"! 🎉 Our team will be with you shortly.",[
-      {t:"💬 Continue on WhatsApp",fn:function(){window.open('https://wa.me/255685144667?text='+msg,'_blank');},cls:'vr-wa'}
-    ]);
-  }
+  // share
+  var url = location.href.split('#')[0];
+  var msg = "Fatimiyya | Beyond her name, discover her legacy\n" + url;
+  document.getElementById('wa').href = "https://wa.me/?text=" + encodeURIComponent(msg);
+  var copyBtn = document.getElementById('copy');
+  copyBtn.addEventListener('click', function(){
+    var label = copyBtn.querySelector('span');
+    function done(){ var d = current === 'gu' ? GU : current === 'sw' ? SW : EN; label.textContent = d.copied; setTimeout(function(){ label.textContent = d.copy; }, 2200); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, function(){ label.textContent = url; });
+    } else { label.textContent = url; }
+  });
 
-  setTimeout(function(){if(!opened){opened=true;openChat();}},7000);
+  // reveal
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+    rv.forEach(function(el){ io.observe(el); });
+  } else { rv.forEach(function(el){ el.classList.add('in'); }); }
 })();
 </script>
-</html>
