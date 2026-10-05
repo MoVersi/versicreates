@@ -3,7 +3,7 @@
 <meta name="theme-color" content="#0f111a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;500&family=Aref+Ruqaa:wght@400;700&family=Marcellus&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;500&family=Noto+Nastaliq+Urdu:wght@400;600&family=Aref+Ruqaa:wght@400;700&family=Marcellus&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap">
 <style>
   :root{
     color-scheme: dark;
@@ -28,8 +28,8 @@
   .hon{font-size:.8em;opacity:.8;white-space:nowrap}
 
   /* language toggle */
-  .lang{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:10;display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(15,17,26,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(210,171,98,.35)}
-  .lang button{font:500 .7rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--moon-soft);background:none;border:0;border-radius:999px;padding:8px 10px;cursor:pointer;white-space:nowrap}
+  .lang{direction:ltr;position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:10;display:flex;gap:2px;padding:3px;border-radius:999px;background:rgba(15,17,26,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(210,171,98,.35)}
+  .lang button{font:500 .7rem/1 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--moon-soft);background:none;border:0;border-radius:999px;padding:8px 9px;cursor:pointer;white-space:nowrap}
   .lang button[aria-pressed="true"]{background:var(--gold);color:var(--night)}
   .lang button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
@@ -66,7 +66,7 @@
   .qualities p.intro{color:var(--moon-soft)}
   .qwords{margin:26px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:10px}
   .qwords li{font-family:var(--display);font-size:1.02rem;padding:9px 16px;border:1px solid rgba(210,171,98,.45);border-radius:999px;color:var(--moon)}
-  .quote{margin-top:56px;padding-left:20px;border-left:1px solid var(--gold);font-size:1.02rem;color:var(--moon)}
+  .quote{margin-top:56px;padding-inline-start:20px;border-inline-start:1px solid var(--gold);font-size:1.02rem;color:var(--moon)}
   .quote sup,.note sup{font-size:.65em}
   sup a{color:var(--gold);text-decoration:none;padding:0 2px}
 
@@ -84,17 +84,17 @@
   .ask .lead{color:var(--moon-soft)}
   .ask .lead2{margin-top:18px;font-family:var(--display);font-size:1.7rem;color:var(--moon)}
   .questions{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:14px}
-  .questions li{position:relative;padding:18px 18px 18px 50px;background:rgba(236,230,220,.045);border-radius:4px;font-size:1.08rem;line-height:1.5}
-  .questions li::before{content:"";position:absolute;left:18px;top:1.35em;width:12px;height:12px;border:1px solid var(--gold);transform:rotate(45deg)}
+  .questions li{position:relative;padding-block:18px;padding-inline:50px 18px;background:rgba(236,230,220,.045);border-radius:4px;font-size:1.08rem;line-height:1.5}
+  .questions li::before{content:"";position:absolute;inset-inline-start:18px;top:1.35em;width:12px;height:12px;border:1px solid var(--gold);transform:rotate(45deg)}
   .note{margin-top:44px;font-size:.95rem;color:var(--moon-soft)}
 
   /* SERMON */
   .sermon{background:#271d2c}
   .sermon h2{font-size:clamp(1.8rem,7.6vw,2.3rem);line-height:1.15;margin:10px 0 28px;color:var(--moon)}
-  .sermon blockquote{margin:0;padding-left:20px;border-left:1px solid var(--gold);display:grid;gap:18px}
+  .sermon blockquote{margin:0;padding-inline-start:20px;border-inline-start:1px solid var(--gold);display:grid;gap:18px}
   .sermon blockquote p{font-size:1.06rem;line-height:1.75;color:var(--moon)}
   .sermon blockquote p:first-child::first-letter{font-family:var(--display);font-size:2.6em;float:left;line-height:.9;padding:.06em .1em 0 0;color:var(--gold)}
-  html[lang="gu"] .sermon blockquote p:first-child::first-letter{all:unset}
+  html[lang="gu"] .sermon blockquote p:first-child::first-letter, html[lang="ur"] .sermon blockquote p:first-child::first-letter{all:unset}
   .sermon .more{margin-top:28px;font-size:.98rem;color:var(--moon-soft)}
   .sermon .more a{color:var(--gold);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding-block:6px}
   .sermon .more a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -104,8 +104,8 @@
   .knowing .a{font-size:1.1rem;color:var(--moon-soft)}
   .knowing .b{margin-top:10px;font-family:var(--display);font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.15;color:var(--gold)}
   .knowing ul{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:14px}
-  .knowing li{font-size:1.1rem;padding-left:22px;position:relative}
-  .knowing li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:1px;background:var(--gold)}
+  .knowing li{font-size:1.1rem;padding-inline-start:22px;position:relative}
+  .knowing li::before{content:"";position:absolute;inset-inline-start:0;top:.72em;width:10px;height:1px;background:var(--gold)}
 
   /* DAWN band */
   .dawn{position:relative;padding-block:90px 110px;text-align:center;background:linear-gradient(#3a2a37 0%,#7b5a5c 34%,var(--dawn) 60%,#e0c9b6 82%,var(--pearl) 100%);overflow:hidden}
@@ -141,7 +141,7 @@
 
   .refs{background:var(--pearl2);color:var(--ink-soft);padding-block:36px 48px;font-size:.86rem;line-height:1.55}
   .refs h3{font-family:var(--display);font-weight:400;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink);margin:0 0 12px}
-  .refs ol{margin:0;padding-left:1.2em;display:grid;gap:8px}
+  .refs ol{margin:0;padding-inline-start:1.2em;display:grid;gap:8px}
   .refs a{color:var(--gold-deep)}
   .credit-logo{display:block;margin-top:30px;width:96px;height:96px;border-radius:14px;box-shadow:0 1px 0 rgba(27,26,36,.06),0 6px 18px rgba(15,17,26,.18)}
 
@@ -151,6 +151,21 @@
   html[lang="gu"] .known li b, html[lang="gu"] .pillars b{font-size:.92rem}
   html[lang="gu"] .dawn .cap{font-size:.95rem}
   .lang button[lang="gu"]{letter-spacing:0;text-transform:none;font-size:.82rem}
+
+  /* Urdu: Nastaliq script, right to left */
+  html[lang="ur"]{--display:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif;--body:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif}
+  html[lang="ur"] body{line-height:2.25;font-size:17px}
+  html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] .known .but, html[lang="ur"] .knowing .b, html[lang="ur"] .call .lead, html[lang="ur"] .ask .lead2, html[lang="ur"] .motto{line-height:2;letter-spacing:0}
+  html[lang="ur"] .known li, html[lang="ur"] .pillars span, html[lang="ur"] .questions li, html[lang="ur"] .sermon blockquote p{line-height:2.2}
+  html[lang="ur"] .eyebrow, html[lang="ur"] .known .lead, html[lang="ur"] .known li b, html[lang="ur"] .pillars b, html[lang="ur"] .dawn .cap, html[lang="ur"] .refs h3, html[lang="ur"] .scroll-cue{letter-spacing:0;text-transform:none}
+  html[lang="ur"] .known li b, html[lang="ur"] .pillars b{font-size:.95rem;padding-top:0}
+  html[lang="ur"] .eyebrow, html[lang="ur"] .dawn .cap, html[lang="ur"] .scroll-cue{font-size:.95rem}
+  html[lang="ur"] .hero .q, html[lang="ur"] .call .hint, html[lang="ur"] .call li:last-child{font-style:normal}
+  html[lang="ur"] .call li a span{text-underline-offset:9px}
+  html[dir="rtl"] .call li a .ext{transform:scaleX(-1)}
+  html[dir="rtl"] .call li a:hover .ext{transform:scaleX(-1) translate(2px,-2px)}
+  .lang button[lang="ur"]{font-family:"Noto Nastaliq Urdu","Noto Naskh Arabic",serif;letter-spacing:0;text-transform:none;font-size:.86rem;line-height:1;padding-block:4px 10px}
+  .refs ol{direction:ltr;text-align:left}
 
   /* gentle reveal: content is always visible, it only settles into place */
   .js .rv{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s ease}
@@ -163,6 +178,7 @@
   <button type="button" id="btn-en" data-lang="en" aria-pressed="true">English</button>
   <button type="button" id="btn-gu" data-lang="gu" lang="gu" aria-pressed="false">ગુજરાતી</button>
   <button type="button" id="btn-sw" data-lang="sw" lang="sw" aria-pressed="false">Kiswahili</button>
+  <button type="button" id="btn-ur" data-lang="ur" lang="ur" dir="rtl" aria-pressed="false">اردو</button>
 </div>
 
 <header class="hero">
@@ -369,6 +385,55 @@
     refs:"Marejeo"
   };
 
+  var UR = {
+    heroTitle:"اُن کے نام سے آگے، اُن کی میراث کو پہچانیے",
+    heroQ:"ہم جنابِ فاطمہ زہرا (س) کو واقعی کتنا جانتے ہیں؟",
+    begin:"آغاز کیجیے",
+    knownLead:"ہم انہیں جانتے ہیں",
+    lblDaughter:"بیٹی", daughter:"رسولِ خدا\u00a0ﷺ کی",
+    lblWife:"زوجہ", wife:"امام علی (ع) کی",
+    lblMother:"ماں", mother:"امام حسن (ع) اور امام حسین (ع) کی",
+    but:"لیکن جنابِ فاطمہ (س) اِن رشتوں سے <em>کہیں بڑھ کر</em> تھیں۔",
+    teach:"اہلِ بیت (ع) کی محفوظ تعلیمات میں وہ ایک غیر معمولی خاتون کے طور پر سامنے آتی ہیں، جن کی پہچان ہے",
+    w1:"علم", w2:"عبادت", w3:"طہارت", w4:"شجاعت", w5:"روحانی بیداری",
+    baqir:"الکافی میں روایت ہے کہ امام محمد باقر (ع) نے جنابِ فاطمہ (س) کا ذکر علم کے حوالے سے کیا۔ یہ اس بات کی یاد دہانی ہے کہ اُن کی عظمت صرف نسب سے وراثت میں نہیں ملی تھی، بلکہ اُن کے گہرے روحانی اور علمی مقام میں جھلکتی تھی۔",
+    lifeTitle:"اُن کی زندگی",
+    p1l:"عبادت", p1:"اُن کی زندگی عبادت اور بندگی کی زندگی تھی۔",
+    p2l:"گھر", p2:"اُن کا گھر ایمان کی درسگاہ بن گیا۔",
+    p3l:"کلام", p3:"اُن کے الفاظ ہدایت کا سرچشمہ بن گئے۔",
+    p4l:"شجاعت", p4:"اُن کی شجاعت حق کے لیے ڈٹ جانے کا سبق بن گئی۔",
+    p5l:"قربت", p5:"اور اللہ کے ساتھ اُن کا رشتہ اُن لوگوں کے لیے مثال بن گیا جو اُس کا قرب چاہتے ہیں۔",
+    askLead:"اسی لیے ایامِ فاطمیہ صرف یہ یاد کرنے کا وقت نہیں ہونا چاہیے کہ جنابِ فاطمہ (س) اس دنیا میں تھیں۔",
+    askLead2:"یہ خود سے پوچھنے کا وقت ہے:",
+    q1:"کیا ہم جانتے ہیں کہ وہ کس بات کے لیے کھڑی ہوئیں؟",
+    q2:"کیا ہم اُن کی عبادت کی گہرائی کو سمجھتے ہیں؟",
+    q3:"کیا ہم اُن کے علم کی قدر کرتے ہیں؟",
+    q4:"کیا ہم اُن کی شجاعت کو پہچانتے ہیں؟",
+    q5:"کیا ہم سمجھتے ہیں کہ اہلِ بیت (ع) آج بھی اُن کا ذکر اتنے گہرے احترام سے کیوں کرتے ہیں؟",
+    bihar:"شیعہ روایات میں اُن کی زندگی اور فضائل کے بارے میں بہت سی احادیث محفوظ ہیں، جن میں بحار الانوار بھی شامل ہے، جس کا ایک بڑا حصہ جنابِ سیدہ فاطمہ زہرا (س) کے لیے مخصوص ہے۔",
+    sermonLabel:"خطبہ",
+    sermonTitle:"خطبۂ فدک",
+    sermonP1:"تمام حمد اللہ کے لیے ہے اُس کی عظیم نعمتوں پر، اور اُس کا شکر ہے اُس پر جو اُس نے الہام کیا، اور اُس کی ثنا ہے اُس پر جو اُس نے پہلے سے عطا کیا۔ اُن ہمہ گیر نعمتوں پر جو وہ عطا کرتا ہے، اُس وسیع فضل پر جو وہ بخشتا ہے، اور اُن تمام احسانات پر جو وہ مسلسل کرتا رہتا ہے۔ اُن کی کثرت شمار سے باہر ہے، اُن کی وسعت پیمانے سے بالاتر ہے اور اُن کی انتہا ادراک سے پرے ہے۔ اُس نے لوگوں کو اِن نعمتوں میں اضافے اور دوام کے لیے شکر ادا کرنے کی دعوت دی، اِنہیں بڑھا کر اپنی حمد کی طرف بلایا، اور [آخرت میں] اِن جیسی مزید نعمتیں مانگنے کی ترغیب دی۔",
+    sermonP2:"میں گواہی دیتی ہوں کہ اللہ کے سوا کوئی معبود نہیں، وہ یکتا ہے، اُس کا کوئی شریک نہیں — ایسا کلمہ جس کی حقیقت اخلاص قرار دی گئی، جس کا مفہوم دلوں میں پیوست کیا گیا اور جس کے معنی عقلوں میں روشن ہیں۔ نہ آنکھیں اُسے دیکھ سکتی ہیں، نہ الفاظ اُس کا وصف بیان کر سکتے ہیں اور نہ خیالات اُس کا تصور کر سکتے ہیں۔ اُس نے ہر شے کو بغیر کسی سابقہ وجود کے پیدا کیا، اور بغیر کسی پہلے نمونے کے خلق کیا۔ اُس نے اپنی قدرت سے ہر چیز کو تشکیل دیا اور اپنے ارادے سے اُسے بنایا، بغیر اِس کے کہ اُسے اُن کے پیدا کرنے کی کوئی حاجت ہو یا اُن کی تشکیل میں اُس کا کوئی فائدہ ہو؛ سوائے اِس کے کہ اپنی حکمت کو ثابت کرے، اپنی اطاعت کا اعلان کرے، اپنی قدرت کا اظہار کرے، مخلوق کی بندگی ظاہر کرے اور اپنی دعوت کو سربلند کرے۔ پھر اُس نے اپنی اطاعت پر ثواب اور اپنی نافرمانی پر عذاب مقرر کیا، تاکہ اپنے بندوں کو اپنے عذاب سے بچائے اور انہیں اپنی جنت کی طرف لے جائے۔",
+    sermonMore:'مکمل خطبہ پڑھنے کے لیے <a href="https://al-islam.org/sermon-fadak-tahir-ridha-jaffer/sermon-fadak#sermon" target="_blank" rel="noopener">یہاں کلک کریں</a>۔',
+    mourn:"لہٰذا ایامِ فاطمیہ صرف اُن کی جدائی کا سوگ منانے کا نام نہیں۔",
+    mourn2:"یہ جنابِ فاطمہ (س) کو پہچاننے کا نام ہے۔",
+    k1:"نام کے پیچھے موجود ہستی کو پہچاننا۔",
+    k2:"اُن کی زندگی کے پیچھے کارفرما اقدار کو سمجھنا۔",
+    k3:"رسولِ خدا\u00a0ﷺ کی بیٹی سے سیکھنا۔",
+    k4:"اور اُن کی مثال کو اپنے ایمان کے ساتھ جینے کا انداز بدلنے دینا۔",
+    dawnCap:"الزہرا · روشن و تاباں",
+    callLead:"یہ ہیں جنابِ فاطمہ (س)۔ صرف اُن کا نام نہ سنیے۔",
+    c1:"اُن کی شخصیت کو دریافت کیجیے۔",
+    c2:"اُن کی زندگی کا مطالعہ کیجیے۔",
+    c3:"اُن کے پیغام کو سمجھیے۔",
+    c4:"اور اُن کی میراث کو اپنے ذریعے زندہ رکھیے۔",
+    hint:"مزید معلومات کے لیے متن پر کلک کریں۔",
+    m1:"انہیں پہچانیے۔", m2:"اُن سے سیکھیے۔", m3:"اُن کی اقدار کو اپنائیے۔",
+    shareWa:"واٹس ایپ پر شیئر کریں", copy:"لنک کاپی کریں", copied:"لنک کاپی ہو گیا",
+    refs:"حوالہ جات"
+  };
+
   var GU = {
     heroTitle:"એમના નામથી આગળ, એમનો વારસો ઓળખો",
     heroQ:"આપણે જનાબે ફાતિમા અલ‑ઝહરા (સ.અ.) ને ખરેખર કેટલા ઓળખીએ છીએ?",
@@ -426,17 +491,18 @@
 
   function setLang(l){
     current = l;
-    var dict = l === 'gu' ? GU : l === 'sw' ? SW : EN;
+    var dict = {gu:GU, sw:SW, ur:UR}[l] || EN;
     nodes.forEach(function(n){
       var v = dict[n.dataset.i18n]; if (v == null) v = EN[n.dataset.i18n]; if (v == null) return;
       if (n.hasAttribute('data-html')) n.innerHTML = v; else n.textContent = v;
     });
     document.documentElement.setAttribute('lang', l);
+    document.documentElement.setAttribute('dir', l === 'ur' ? 'rtl' : 'ltr');
     document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'); });
     try { localStorage.setItem('fatemiyya-lang', l); } catch(e){}
   }
   document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
-  try { var saved = localStorage.getItem('fatemiyya-lang'); if (saved === 'gu' || saved === 'sw') setLang(saved); } catch(e){}
+  try { var saved = localStorage.getItem('fatemiyya-lang'); if (saved === 'gu' || saved === 'sw' || saved === 'ur') setLang(saved); } catch(e){}
 
   // share
   var url = location.href.split('#')[0];
@@ -445,7 +511,7 @@
   var copyBtn = document.getElementById('copy');
   copyBtn.addEventListener('click', function(){
     var label = copyBtn.querySelector('span');
-    function done(){ var d = current === 'gu' ? GU : current === 'sw' ? SW : EN; label.textContent = d.copied; setTimeout(function(){ label.textContent = d.copy; }, 2200); }
+    function done(){ var d = {gu:GU, sw:SW, ur:UR}[current] || EN; label.textContent = d.copied; setTimeout(function(){ label.textContent = d.copy; }, 2200); }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(url).then(done, function(){ label.textContent = url; });
     } else { label.textContent = url; }
